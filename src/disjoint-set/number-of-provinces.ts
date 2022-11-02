@@ -14,6 +14,27 @@
  * Return the total number of provinces.
  **/
 
+import UnionFind from "./unionFind";
+
 export default function findCircleNum(isConnected: number[][]): number {
-    return 0;
+    const size = isConnected.length;
+    if (size === 0) {
+        return 0;
+    }
+
+    const uf = new UnionFind(size);
+    for (let x=0; x<size; x++) {
+        for (let y=x+1; y<size; y++) {
+            if (isConnected[x][y]) {
+                uf.unionSet(x, y);
+            }
+        }
+    }
+
+    const groups: any = {};
+    for (let i=0; i<size; i++) {
+        const root = uf.find(i);
+        groups[root] = root;
+    }
+    return Object.keys(groups).length;
 };
