@@ -9,10 +9,10 @@ export default class UnionFind {
     }
 
     find(x: number): number {
-        while (x != this.root[x]) {
-            x = this.root[x];
+        if (x === this.root[x]) {
+            return x;
         }
-        return this.root[x];
+        return this.root[x] = this.find(this.root[x]);
 
         // TODO: optimize find to re-write the path during find
     }
@@ -23,6 +23,10 @@ export default class UnionFind {
         if (rootX !== rootY) {
             this.root[rootY] = rootX;
         }
+    }
+
+    connected(x: number, y: number): boolean {
+        return this.find(x) === this.find(y);
     }
 
     // TODO: I need some way to handle result groups

@@ -16,8 +16,8 @@ describe('[UnionFind]', () => {
         uf.unionSet(2, 5);
         uf.unionSet(1, 3);
 
-        expect(uf.find(0) === uf.find(2) && uf.find(0) === uf.find(5)).toBeTruthy();
-        expect(uf.find(1) === uf.find(3)).toBeTruthy();
-        expect(uf.find(0) !== uf.find(1) && uf.find(1) !== uf.find(4)).toBeTruthy();
+        expect(uf.connected(0, 2) && uf.connected(0, 5)).toBeTruthy();
+        expect(uf.connected(1, 3)).toBeTruthy();
+        expect(!uf.connected(0, 1) && !uf.connected(1, 4)).toBeTruthy();
     });
 });
