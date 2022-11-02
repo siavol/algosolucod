@@ -1,2 +1,3 @@
 # code-algosolucod
-svl alogisic solutions code"
+
+svl code solutions for algosic tasks
