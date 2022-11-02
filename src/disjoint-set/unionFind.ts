@@ -13,6 +13,8 @@ export default class UnionFind {
             x = this.root[x];
         }
         return this.root[x];
+
+        // TODO: optimize find to re-write the path during find
     }
 
     unionSet(x: number, y: number): void {
@@ -22,5 +24,9 @@ export default class UnionFind {
             this.root[rootY] = rootX;
         }
     }
+
+    // TODO: I need some way to handle result groups
+    // 1. get number of groups
+    // 2. get groups list
 }
 
