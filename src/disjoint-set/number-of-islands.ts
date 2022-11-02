@@ -52,5 +52,5 @@ export default function numIslands(grid: string[][]): number {
     return Object.values(groups)
         .filter(({x, y}) => grid[x][y] === '1')
         .length;
-};
+}
 

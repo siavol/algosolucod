@@ -16,6 +16,10 @@
 
 import UnionFind from "./unionFind";
 
+type GroupsMap = {
+    [key: number]: number;
+}
+
 export default function findCircleNum(isConnected: number[][]): number {
     const size = isConnected.length;
     if (size === 0) {
@@ -31,10 +35,10 @@ export default function findCircleNum(isConnected: number[][]): number {
         }
     }
 
-    const groups: any = {};
+    const groups: GroupsMap = {};
     for (let i=0; i<size; i++) {
         const root = uf.find(i);
         groups[root] = root;
     }
     return Object.keys(groups).length;
-};
+}
