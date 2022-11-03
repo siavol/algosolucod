@@ -13,8 +13,6 @@ export default class UnionFind {
             return x;
         }
         return this.root[x] = this.find(this.root[x]);
-
-        // TODO: optimize find to re-write the path during find
     }
 
     unionSet(x: number, y: number): void {
@@ -29,8 +27,26 @@ export default class UnionFind {
         return this.find(x) === this.find(y);
     }
 
+    getGroups(): UFGroups {
+        const result: UFGroups = {};
+        for (let i = 0; i < this.root.length; i++) {
+            const grRoot = this.find(i);
+            let group = result[grRoot];
+            if (!group) {
+                group = [];
+                result[grRoot] = group;
+            }
+            group.push(i);
+        }
+        return result;
+    }
+
     // TODO: I need some way to handle result groups
     // 1. get number of groups
     // 2. get groups list
+}
+
+export type UFGroups = {
+    [key: number]: number[];
 }
 
