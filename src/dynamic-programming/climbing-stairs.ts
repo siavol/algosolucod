@@ -19,10 +19,10 @@ export function climbStairs(n: number): number {
     let n1 = 1;
     let n2 = 2;
     for (let i = 3; i <= n; i++) {
-        let fib = n1 + n2;
+        const fib = n1 + n2;
         n1 = n2;
         n2 = fib;
     }
-    return n2;;
-};
+    return n2;
+}
 

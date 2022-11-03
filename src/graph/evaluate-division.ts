@@ -16,7 +16,7 @@
  * queries will not result in division by zero and that there is no contradiction.
  **/
 
-import {GraphEdge, GraphNode} from "./graph";
+import {GraphNode} from "./graph";
 
 type NodeMap = {
     [key: string]: GraphNode<string, number>;
@@ -55,7 +55,7 @@ export default function calcEquation(
 
     return queries
         .map(q => calcQuery(q, nodesMap));
-};
+}
 
 function calcQuery(query: string[], nodesMap: NodeMap): number {
     const [var1, var2] = query;
@@ -71,7 +71,7 @@ function calcQuery(query: string[], nodesMap: NodeMap): number {
     const visited = new Map<GraphNode<string, number>, boolean>();
     const dfsTraverse = (node: GraphNode<string, number>): number => {
         visited.set(node, true);
-        for (let edge of node.getEdges()) {
+        for (const edge of node.getEdges()) {
             if (!visited.has(edge.to)) {
                 if (edge.to === node2) {
                     return edge.meta;
