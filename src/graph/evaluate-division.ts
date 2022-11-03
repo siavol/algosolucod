@@ -36,7 +36,7 @@ export default function calcEquation(
     // build graph
     const nodesMap: NodeMap = {};
     for (let i = 0; i < equations.length; i++) {
-        const [ var1, var2 ] = equations[i];
+        const [var1, var2] = equations[i];
         const val = values[i];
 
         let node1 = nodesMap[var1];
