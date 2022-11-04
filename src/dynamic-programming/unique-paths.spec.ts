@@ -1,4 +1,4 @@
-import uniquePaths from "./unique_paths"
+import uniquePaths from "./unique-paths"
 
 describe('[Unique Paths]', () => {
     test('returns correct value for 3x2 grid', () => {

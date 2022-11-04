@@ -1,4 +1,4 @@
-import minCostClimbingStairs from "./min_cost_climbing_stairs";
+import minCostClimbingStairs from "./min-cost-climbing-stairs";
 
 describe('Min Cost Climbing Stairs', () => {
 
