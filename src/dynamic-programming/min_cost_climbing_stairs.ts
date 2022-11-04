@@ -11,19 +11,17 @@
  **/
 
 export default function minCostClimbingStairs(cost: number[]): number {
-    let result = 0;
-    let idx = cost.length;
-    while (idx > 1) {
-        const step1 = cost[idx - 1];
-        const step2 = cost[idx - 2];
-        if (step1 < step2) {
-            idx -= 1;
-            result += step1;
-        } else {
-            idx -= 2;
-            result += step2;
+    const getCostForIndex = (i: number): number => {
+        if (i < 0) {
+            return 0;
         }
-    }
-    return result;
+
+        const oneStepCost = getCostForIndex(i - 1);
+        const twoStepCost = getCostForIndex(i - 2);
+        return cost[i] + Math.min(oneStepCost, twoStepCost);
+    };
+
+    let idx = cost.length;
+    return Math.min(getCostForIndex(idx-1), getCostForIndex(idx - 2));
 };
 
