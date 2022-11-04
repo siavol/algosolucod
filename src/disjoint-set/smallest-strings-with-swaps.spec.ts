@@ -19,7 +19,7 @@ describe('[Smalles Strings With Swaps]', () => {
             result: 'abc'
         }
     ];
-    for (let testCase of testCases) {
+    for (const testCase of testCases) {
         test(`returns correct result for ${JSON.stringify(testCase.input)} with pairs ${JSON.stringify(testCase.pairs)}`, () => {
             const actual = smallestStringWithSwaps(testCase.input, testCase.pairs);
             expect(actual).toStrictEqual(testCase.result);

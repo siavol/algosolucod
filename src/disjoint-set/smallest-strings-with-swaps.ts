@@ -25,13 +25,13 @@ export default function smallestStringWithSwaps(
 
     const size = s.length;
     const uf = new UnionFind(size);
-    for (let [x, y] of pairs) {
+    for (const [x, y] of pairs) {
         uf.unionSet(x, y);
     }
 
     const groups = uf.getGroups();
     const result: string[] = [];
-    for (let group of Object.values(groups)) {
+    for (const group of Object.values(groups)) {
         group
             .map(i => s[i])
             .sort()
@@ -42,5 +42,5 @@ export default function smallestStringWithSwaps(
     }
 
     return result.join('');
-};
+}
 

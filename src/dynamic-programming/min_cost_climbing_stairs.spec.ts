@@ -33,4 +33,4 @@ describe('Min Cost Climbing Stairs', () => {
         const result = minCostClimbingStairs(input);
         expect(result).toBe(2);
     })
-});
+})

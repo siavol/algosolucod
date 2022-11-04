@@ -27,7 +27,7 @@ export default function minCostClimbingStairs(cost: number[]): number {
         return result;
     };
 
-    let idx = cost.length;
+    const idx = cost.length;
     return Math.min(getCostForIndex(idx-1), getCostForIndex(idx - 2));
-};
+}
 
