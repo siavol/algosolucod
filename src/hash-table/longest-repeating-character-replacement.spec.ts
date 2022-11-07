@@ -1,4 +1,4 @@
-import characterReplacement from "./longest_repeating_character_replacement";
+import characterReplacement from "./longest-repeating-character-replacement";
 
 describe('[Longest Repeating Character Replacement]', () => {
     test('returns correct result for "ABAB" and k=2', () => {
