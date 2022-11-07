@@ -43,7 +43,7 @@ export default function findAnagrams(s: string, p: string): number[] {
 
         if (end - begin >= pSize) {
             const begChar = s[begin];
-            let begCount = map[begChar];
+            const begCount = map[begChar];
             if (begCount !== undefined) {
                 if (begCount === 0) {
                     counter++;
