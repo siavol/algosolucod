@@ -1,11 +1,12 @@
 export class MaxHeap {
     private readonly items: number[] = [];
 
-    constructor() {
-    }
-
     isEmpty(): boolean {
         return this.items.length === 0;
+    }
+
+    size(): number {
+        return this.items.length;
     }
 
     insert(value: number) {
@@ -53,7 +54,7 @@ export class MaxHeap {
             if (li < this.items.length && ri < this.items.length
                 && this.items[i] < this.items[li]
                 && this.items[i] < this.items[ri]) {
-                const j = this.items[li] < this.items[ri] ? li : ri;
+                const j = this.items[li] > this.items[ri] ? li : ri;
                 this.swapItems(i, j);
                 i = j;
             } else if (li < this.items.length && this.items[i] < this.items[li]) {
