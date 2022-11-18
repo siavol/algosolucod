@@ -40,10 +40,6 @@ export default class UnionFind {
         }
         return result;
     }
-
-    // TODO: I need some way to handle result groups
-    // 1. get number of groups
-    // 2. get groups list
 }
 
 export type UFGroups = {
